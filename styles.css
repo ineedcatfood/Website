@@ -1,5 +1,6 @@
 body{
     background-image: url(Images/mainpageBG.png);
+    background-repeat: no-repeat;
     font-family: sans-serif, Arial, Helvetica;
     margin: 0;
     padding: 0;
@@ -18,12 +19,12 @@ header a{
     margin-top: -40px;
     margin-left: 170px;
 }
-header  .games a{
+header  .desktopgames a{
     position: absolute;
     left: 180px;
     top: 100px;
 }
-header .logo a{
+header .desktoplogo a{
     background-image:url(Images/catLogo.png);
     background-position:center;
     background-size: 230px;
@@ -37,6 +38,15 @@ header .logo a{
     left: -150px;
     top:55px
 }
+header .mobilegame{
+    display: none;
+}
+header .mobilelogo{
+    display: none;
+}
+header .mobilehome{
+    display: none;
+}
 ul{
     margin-top: 60px;
     margin-right: 10px;
@@ -46,6 +56,64 @@ ul{
 li{
     display: inline-block;
 }
+@media screen and (max-width: 500px){
+    header .mobilegame {
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: calc(100px + 65px + 10px); 
+        transform: translateX(-50%);
+    }
+    header .mobilehome{
+        display: inline-block;
+        position: absolute;
+        left: 5%;
+        top: calc(100px + 65px + 10px); 
+        transform: translateX(-50%);
+    }
+    header .mobilelogo {
+        background-image: url(Images/catLogo.png);
+        background-position: center;
+        background-size: 150px;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 130px;
+        width: 130px;
+        border-radius: 50%;
+        position: absolute;
+        top:100px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-indent: -999999999px;
+    }
+    
+    header .desktopgame{
+        display: none;
+    }
+    header .desktoplogo{
+        display: none;
+    }
+    header .desktophome{
+        display: none;
+    }
+    section.feature-box.first-row{
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 650px;
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        margin-top: 20%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+     }
+}
+
 section.feature-box.first-row{
    background-size: 100%;
    background-position: center;
@@ -59,16 +127,21 @@ section.feature-box.first-row{
    flex-direction: column;
    text-align: center;
 }
+
 section.feature-box.gameContent{
     margin-top: 150px;
-    margin-left: 200px;
+    margin-left: 5%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .feature-box.gameContent figcaption{
-    margin-left: 90px;
+    margin-left: 40px;
     font-size: 20px;
 }
 .feature-box.gameContent img{
-    width: 200px;
+    width: 150px;
     border-radius: 50%;
     border:1px white;
     box-shadow: black 10px 0px 10px;
